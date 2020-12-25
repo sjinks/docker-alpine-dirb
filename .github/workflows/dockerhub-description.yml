@@ -23,4 +23,4 @@ jobs:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: wildwildangel/dirb
-          short-description: Alpine-based image to run dirb fuzzer
+          short-description: Alpine-based image to run dirb scanner

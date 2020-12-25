@@ -7,8 +7,9 @@ RUN \
     chmod -R a+x wordlists configure && \
     ./configure && make && make install && mkdir -p /usr/share/dirb && cp -aR wordlists /usr/share/dirb && \
     cd / && apk del --no-cache gcc make curl-dev musl-dev && rm -rf /build && \
-    install -d -m 0700 -o nobody -g nobody .cache
+    install -d -m 0700 -o nobody -g nobody /.cache
 
 USER nobody:nobody
 VOLUME /usr/share/dirb
+VOLUME /.cache
 ENTRYPOINT ["/usr/local/bin/dirb"]
